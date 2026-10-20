@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SNA Marketing Intelligence — AI Breakthrough</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Vis.js Network Graph Library (Khusus Pemetaan Node SNA) -->
+  <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
+  <style>
+    /* Custom Scrollbar */
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.6); }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(51, 65, 85, 0.8); border-radius: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.8); }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen flex flex-col antialiased">
+
+  <!-- Top Navigation Bar -->
+  <header class="bg-slate-800/80 backdrop-blur border-b border-slate-700/60 px-6 py-4 flex items-center justify-between sticky top-0 z-30">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-black text-white shadow-lg shadow-cyan-500/20 text-sm">
+        SNA
+      </div>
+      <div>
+        <h1 class="text-sm font-bold text-white tracking-wide">SNA Marketing Intelligence</h1>
+        <p class="text-[10px] text-slate-400">AI Breakthrough Ecosystem — Decision Engine</p>
+      </div>
+    </div>
+
+    <!-- Status & Back Link -->
+    <div class="flex items-center gap-3">
+      <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Dedicated SNA Key Active
+      </span>
+      <!-- Ganti URL ini dengan URL Landing Page AI Breakthrough utama -->
+      <a href="https://indahhardani.github.io" class="bg-slate-700 hover:bg-slate-600 text-slate-200 px-3 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-2">
+        <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Portal Utama
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="flex-1 p-6 space-y-6 max-w-[1600px] w-full mx-auto">
+
+    <!-- 1. Top KPI Summary Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-4 flex items-center justify-between shadow-sm">
+        <div>
+          <p class="text-[11px] text-slate-400 font-medium">Mapped Influencers</p>
+          <h3 class="text-xl font-bold text-white mt-1" id="kpi-total-influencers">24</h3>
+          <p class="text-[10px] text-cyan-400 mt-0.5">Across 4 Social Channels</p>
+        </div>
+        <div class="p-3 bg-cyan-500/10 text-cyan-400 rounded-xl">
+          <i data-lucide="users" class="w-5 h-5"></i>
+        </div>
+      </div>
+
+      <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-4 flex items-center justify-between shadow-sm">
+        <div>
+          <p class="text-[11px] text-slate-400 font-medium">Avg. Engagement Authenticity</p>
+          <h3 class="text-xl font-bold text-emerald-400 mt-1" id="kpi-auth-score">94.2%</h3>
+          <p class="text-[10px] text-slate-400 mt-0.5">Low Bot Interference</p>
+        </div>
+        <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl">
+          <i data-lucide="shield-check" class="w-5 h-5"></i>
+        </div>
+      </div>
+
+      <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-4 flex items-center justify-between shadow-sm">
+        <div>
+          <p class="text-[11px] text-slate-400 font-medium">Top Performing Channel</p>
+          <h3 class="text-xl font-bold text-purple-400 mt-1">TikTok & IG</h3>
+          <p class="text-[10px] text-slate-400 mt-0.5">Highest Community Virality</p>
+        </div>
+        <div class="p-3 bg-purple-500/10 text-purple-400 rounded-xl">
+          <i data-lucide="trending-up" class="w-5 h-5"></i>
+        </div>
+      </div>
+
+      <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-4 flex items-center justify-between shadow-sm">
+        <div>
+          <p class="text-[11px] text-slate-400 font-medium">Budget Efficiency Index</p>
+          <h3 class="text-xl font-bold text-amber-400 mt-1">3.8x ROI</h3>
+          <p class="text-[10px] text-slate-400 mt-0.5">Vs Standard Ad Spend</p>
+        </div>
+        <div class="p-3 bg-amber-500/10 text-amber-400 rounded-xl">
+          <i data-lucide="zap" class="w-5 h-5"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Filter & Controls Bar -->
+    <div class="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-4 flex flex-col md:flex-row gap-3 items-center justify-between">
+      <div class="flex flex-wrap gap-2 w-full md:w-auto">
+        <select id="sna-filter-channel" onchange="filterSnaData()" class="bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-cyan-500">
+          <option value="">Semua Kanal (All Channels)</option>
+          <option value="TikTok">TikTok</option>
+          <option value="Instagram">Instagram</option>
+          <option value="YouTube">YouTube</option>
+        </select>
+
+        <select id="sna-filter-niche" onchange="filterSnaData()" class="bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-cyan-500">
+          <option value="">Semua Cluster / Minat</option>
+          <option value="Skincare Tech">Skincare Tech</option>
+          <option value="Beauty Vlogger">Beauty Vlogger</option>
+          <option value="Dermatology">Dermatology</option>
+        </select>
+
+        <input type="text" id="sna-search-keyword" oninput="filterSnaData()" placeholder="Cari akun / topik..." class="bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 w-full md:w-64 focus:outline-none focus:border-cyan-500">
+      </div>
+
+      <button onclick="openScanModal()" class="w-full md:w-auto bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-4 py-2 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20">
+        <i data-lucide="scan-face" class="w-4 h-4"></i> Analisis Influencer Baru
+      </button>
+    </div>
+
+    <!-- 3. Main Split View Grid (Graph vs AI Decision Box) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      
+      <!-- Left: Interactive Network Graph Container (8 Cols) -->
+      <div class="lg:col-span-8 bg-slate-800/40 border border-slate-700/60 rounded-2xl p-5 flex flex-col h-[520px] relative overflow-hidden">
+        <div class="flex items-center justify-between mb-3 z-10">
+          <div>
+            <h2 class="text-sm font-bold text-white flex items-center gap-2">
+              <i data-lucide="network" class="w-4 h-4 text-cyan-400"></i> Social Network Graph Map
+            </h2>
+            <p class="text-[11px] text-slate-400">Visualisasi keterhubungan antar-influencer & klaster audiens</p>
+          </div>
+          <div class="flex gap-2">
+            <span class="text-[10px] bg-slate-900 border border-slate-700 px-2.5 py-1 rounded-lg text-slate-300">
+              <span class="inline-block w-2 h-2 rounded-full bg-cyan-400 mr-1"></span> Connector Node
+            </span>
+            <span class="text-[10px] bg-slate-900 border border-slate-700 px-2.5 py-1 rounded-lg text-slate-300">
+              <span class="inline-block w-2 h-2 rounded-full bg-purple-400 mr-1"></span> Community Hub
+            </span>
+          </div>
+        </div>
+
+        <!-- Canvas Tempat Vis.js Menggambar Graf Jaringan -->
+        <div id="sna-graph-canvas" class="flex-1 w-full h-full bg-slate-950/70 rounded-xl border border-slate-800/80 relative overflow-hidden"></div>
+      </div>
+
+      <!-- Right: AI Decision & Recommendation Panel (4 Cols) -->
+      <div class="lg:col-span-4 bg-slate-800/40 border border-slate-700/60 rounded-2xl p-5 flex flex-col h-[520px] space-y-4">
+        <div>
+          <h2 class="text-sm font-bold text-white flex items-center gap-2">
+            <i data-lucide="sparkles" class="w-4 h-4 text-amber-400"></i> AI Decision Engine
+          </h2>
+          <p class="text-[11px] text-slate-400">Rekomendasi alokasi & keputusan marketing</p>
+        </div>
+
+        <!-- Output Decision Box -->
+        <div class="flex-1 bg-slate-900/80 border border-slate-700/50 rounded-xl p-4 overflow-y-auto text-xs space-y-3 custom-scrollbar" id="ai-decision-box">
+          <div class="p-3 bg-cyan-500/10 border border-cyan-500/20 rounded-lg text-cyan-200">
+            <p class="font-bold text-[11px] text-cyan-400 mb-1">Rekomendasi Alokasi Influencer:</p>
+            <p class="text-[11px] leading-relaxed">
+              Disarankan mengalokasikan <span class="font-bold text-white">60% budget</span> ke 3 Micro-Connector (Cluster Skincare Tech) karena memiliki korelasi *bridge engagement* 2.4x lebih tinggi.
+            </p>
+          </div>
+
+          <div class="p-3 bg-slate-800/80 border border-slate-700/50 rounded-lg">
+            <p class="font-semibold text-slate-300 mb-1">Channel Efficiency Deployment:</p>
+            
+            <div class="mt-3">
+              <div class="flex items-center justify-between text-slate-400 text-[11px]">
+                <span>TikTok (Organic Reach)</span>
+                <span class="text-emerald-400 font-bold">88/100</span>
+              </div>
+              <div class="w-full bg-slate-700 h-1.5 rounded-full mt-1">
+                <div class="bg-emerald-400 h-1.5 rounded-full" style="width: 88%"></div>
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <div class="flex items-center justify-between text-slate-400 text-[11px]">
+                <span>Instagram Reels</span>
+                <span class="text-purple-400 font-bold">72/100</span>
+              </div>
+              <div class="w-full bg-slate-700 h-1.5 rounded-full mt-1">
+                <div class="bg-purple-400 h-1.5 rounded-full" style="width: 72%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button onclick="runAiDecisionCheck()" class="w-full bg-slate-700 hover:bg-slate-600 text-slate-100 py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 border border-slate-600">
+          <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Regenerate AI Recommendation
+        </button>
+      </div>
+
+    </div>
+
+    <!-- 4. Detailed Influencer Matrix Table -->
+    <div class="bg-slate-800/40 border border-slate-700/60 rounded-2xl overflow-hidden">
+      <div class="p-4 border-b border-slate-700/60 flex items-center justify-between">
+        <h3 class="text-xs font-bold text-white flex items-center gap-2">
+          <i data-lucide="list-filter" class="w-4 h-4 text-cyan-400"></i> Influencer Network Analysis List
+        </h3>
+        <span class="text-[11px] text-slate-400">Menampilkan hasil pemetaan jaringan</span>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse text-xs">
+          <thead>
+            <tr class="bg-slate-900/60 border-b border-slate-700/60 text-slate-400 font-semibold">
+              <th class="p-3 w-12 text-center">No</th>
+              <th class="p-3">Influencer / Akun</th>
+              <th class="p-3">Kanal</th>
+              <th class="p-3">Centrality Score</th>
+              <th class="p-3">Authenticity</th>
+              <th class="p-3">Cluster Minat</th>
+              <th class="p-3 text-center">AI Verdict</th>
+            </tr>
+          </thead>
+          <tbody id="sna-table-body" class="divide-y divide-slate-700/40 text-slate-300">
+            <!-- Data di-render lewat JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Script Logika & Rendering Network Graph -->
+  <script>
+    // Lucide Icons Init
+    lucide.createIcons();
+
+    // Sample Data Dummy untuk Demo Awal
+    const mockInfluencerData = [
+      { id: 1, handle: "@skincare_guru", channel: "TikTok", centrality: "92/100", auth: "96%", cluster: "Skincare Tech", verdict: "HIGHLY RECOMMENDED", type: "connector" },
+      { id: 2, handle: "@beauty_review_id", channel: "Instagram", centrality: "84/100", auth: "91%", cluster: "Beauty Vlogger", verdict: "RECOMMENDED", type: "hub" },
+      { id: 3, handle: "@dr_dermatology", channel: "YouTube", centrality: "88/100", auth: "98%", cluster: "Dermatology", verdict: "HIGHLY RECOMMENDED", type: "connector" },
+      { id: 4, handle: "@glow_daily", channel: "TikTok", centrality: "65/100", auth: "78%", cluster: "Beauty Vlogger", verdict: "MODERATE", type: "member" },
+    ];
+
+    // 1. Render Tabel Influencer
+    function renderSnaTable(data) {
+      const tbody = document.getElementById('sna-table-body');
+      if (!tbody) return;
+
+      tbody.innerHTML = data.map((item, index) => {
+        const badgeColor = item.verdict.includes('HIGHLY') 
+          ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' 
+          : item.verdict.includes('RECOMMENDED') 
+          ? 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20' 
+          : 'bg-amber-500/10 text-amber-400 border-amber-500/20';
+
+        return `
+          <tr class="hover:bg-slate-800/40 transition">
+            <td class="p-3 text-center font-semibold text-slate-500">${index + 1}</td>
+            <td class="p-3 font-bold text-white">${item.handle}</td>
+            <td class="p-3 text-slate-300">${item.channel}</td>
+            <td class="p-3 font-semibold text-cyan-400">${item.centrality}</td>
+            <td class="p-3 text-emerald-400 font-semibold">${item.auth}</td>
+            <td class="p-3 text-slate-300">${item.cluster}</td>
+            <td class="p-3 text-center">
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold border ${badgeColor}">
+                ${item.verdict}
+              </span>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    // 2. Render Interactive Network Graph via Vis.js
+    function initNetworkGraph() {
+      const container = document.getElementById('sna-graph-canvas');
+      if (!container) return;
+
+      const nodes = new vis.DataSet([
+        { id: 1, label: '@skincare_guru\n(Connector)', color: { background: '#06b6d4', border: '#22d3ee' }, shape: 'ellipse', font: { color: '#ffffff', size: 12 } },
+        { id: 2, label: '@beauty_review_id', color: { background: '#c084fc', border: '#e879f9' }, shape: 'ellipse', font: { color: '#ffffff', size: 12 } },
+        { id: 3, label: '@dr_dermatology', color: { background: '#06b6d4', border: '#22d3ee' }, shape: 'ellipse', font: { color: '#ffffff', size: 12 } },
+        { id: 4, label: '@glow_daily', color: { background: '#475569', border: '#64748b' }, shape: 'ellipse', font: { color: '#ffffff', size: 12 } },
+        { id: 5, label: 'Community Skincare', color: { background: '#1e293b', border: '#334155' }, shape: 'box', font: { color: '#94a3b8', size: 11 } }
+      ]);
+
+      const edges = new vis.DataSet([
+        { from: 1, to: 5, width: 3, color: { color: '#06b6d4' } },
+        { from: 2, to: 5, width: 2, color: { color: '#c084fc' } },
+        { from: 3, to: 1, width: 2, color: { color: '#38bdf8' } },
+        { from: 4, to: 2, width: 1, color: { color: '#64748b' } }
+      ]);
+
+      const options = {
+        nodes: { borderWidth: 2 },
+        physics: { stabilization: true, barnesHut: { springLength: 100 } }
+      };
+
+      new vis.Network(container, { nodes, edges }, options);
+    }
+
+    // Filter Logic
+    function filterSnaData() {
+      const channel = document.getElementById('sna-filter-channel').value;
+      const niche = document.getElementById('sna-filter-niche').value;
+      const keyword = document.getElementById('sna-search-keyword').value.toLowerCase();
+
+      const filtered = mockInfluencerData.filter(item => {
+        const matchChannel = !channel || item.channel === channel;
+        const matchNiche = !niche || item.cluster === niche;
+        const matchKeyword = !keyword || item.handle.toLowerCase().includes(keyword);
+        return matchChannel && matchNiche && matchKeyword;
+      });
+
+      renderSnaTable(filtered);
+    }
+
+    // Init on load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderSnaTable(mockInfluencerData);
+      initNetworkGraph();
+    });
+  </script>
+</body>
+</html>
