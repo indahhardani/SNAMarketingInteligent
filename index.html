@@ -41,7 +41,7 @@
       <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
         <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Dedicated SNA Key Active
       </span>
-      <!-- Ganti URL ini dengan URL Landing Page AI Breakthrough utama -->
+      <!-- URL Portal Utama AI Breakthrough -->
       <a href="https://indahhardani.github.io" class="bg-slate-700 hover:bg-slate-600 text-slate-200 px-3 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-2">
         <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Portal Utama
       </a>
@@ -56,7 +56,7 @@
       <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-4 flex items-center justify-between shadow-sm">
         <div>
           <p class="text-[11px] text-slate-400 font-medium">Mapped Influencers</p>
-          <h3 class="text-xl font-bold text-white mt-1" id="kpi-total-influencers">24</h3>
+          <h3 class="text-xl font-bold text-white mt-1" id="kpi-total-influencers">4</h3>
           <p class="text-[10px] text-cyan-400 mt-0.5">Across 4 Social Channels</p>
         </div>
         <div class="p-3 bg-cyan-500/10 text-cyan-400 rounded-xl">
@@ -230,23 +230,96 @@
 
   </main>
 
-  <!-- Script Logika & Rendering Network Graph -->
+  <!-- MODAL: ANALISIS INFLUENCER BARU -->
+  <div id="sna-scan-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="bg-slate-900 border border-slate-700 w-full max-w-lg rounded-2xl flex flex-col shadow-2xl overflow-hidden">
+      
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-slate-700/80 flex items-center justify-between bg-slate-800/50">
+        <h3 class="text-sm font-bold text-white flex items-center gap-2">
+          <i data-lucide="scan-face" class="w-4 h-4 text-cyan-400"></i> Analisis Jaringan Influencer
+        </h3>
+        <button type="button" onclick="closeScanModal()" class="text-slate-400 hover:text-white transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Form Input -->
+      <form onsubmit="handleRunSnaScan(event)" class="p-6 space-y-4 text-xs">
+        
+        <!-- Username / Handle -->
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Username / Handle Akun <span class="text-rose-400">*</span></label>
+          <input type="text" id="scan-handle" required placeholder="Contoh: @skincare_influencer" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-slate-100 focus:outline-none focus:border-cyan-500">
+        </div>
+
+        <!-- Kanal & Cluster -->
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-semibold text-slate-300 mb-1">Kanal Social Media <span class="text-rose-400">*</span></label>
+            <select id="scan-channel" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-slate-100 focus:outline-none focus:border-cyan-500">
+              <option value="TikTok">TikTok</option>
+              <option value="Instagram">Instagram</option>
+              <option value="YouTube">YouTube</option>
+              <option value="X">X (Twitter)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block font-semibold text-slate-300 mb-1">Cluster / Niche Topik <span class="text-rose-400">*</span></label>
+            <select id="scan-cluster" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-slate-100 focus:outline-none focus:border-cyan-500">
+              <option value="Skincare Tech">Skincare Tech</option>
+              <option value="Beauty Vlogger">Beauty Vlogger</option>
+              <option value="Dermatology">Dermatology</option>
+              <option value="Lifestyle & Fashion">Lifestyle & Fashion</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Estimasi Tipe Influencer -->
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Tipe Influencer</label>
+          <select id="scan-type" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-slate-100 focus:outline-none focus:border-cyan-500">
+            <option value="connector">Connector Node (Jembatan Komunitas)</option>
+            <option value="hub">Community Hub (Macro / Core)</option>
+            <option value="member">Micro Influencer</option>
+          </select>
+        </div>
+
+        <!-- Actions -->
+        <div class="pt-3 border-t border-slate-800 flex justify-end gap-2">
+          <button type="button" onclick="closeScanModal()" class="bg-slate-800 text-slate-300 px-4 py-2 rounded-xl font-bold hover:bg-slate-700 transition">Batal</button>
+          <button type="submit" id="btn-submit-scan" class="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-5 py-2 rounded-xl font-bold transition shadow-lg shadow-cyan-500/20">
+            Mulai Analisis AI
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- Script Logika, Visualisasi & Event Handling -->
   <script>
-    // Lucide Icons Init
+    // Init Icons
     lucide.createIcons();
 
-    // Sample Data Dummy untuk Demo Awal
-    const mockInfluencerData = [
+    // State Data Dummy Awal
+    let mockInfluencerData = [
       { id: 1, handle: "@skincare_guru", channel: "TikTok", centrality: "92/100", auth: "96%", cluster: "Skincare Tech", verdict: "HIGHLY RECOMMENDED", type: "connector" },
       { id: 2, handle: "@beauty_review_id", channel: "Instagram", centrality: "84/100", auth: "91%", cluster: "Beauty Vlogger", verdict: "RECOMMENDED", type: "hub" },
       { id: 3, handle: "@dr_dermatology", channel: "YouTube", centrality: "88/100", auth: "98%", cluster: "Dermatology", verdict: "HIGHLY RECOMMENDED", type: "connector" },
       { id: 4, handle: "@glow_daily", channel: "TikTok", centrality: "65/100", auth: "78%", cluster: "Beauty Vlogger", verdict: "MODERATE", type: "member" },
     ];
 
-    // 1. Render Tabel Influencer
+    // 1. Render Tabel Data
     function renderSnaTable(data) {
       const tbody = document.getElementById('sna-table-body');
       if (!tbody) return;
+
+      if (data.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" class="p-4 text-center text-slate-500">Tidak ada data influencer ditemukan.</td></tr>`;
+        return;
+      }
 
       tbody.innerHTML = data.map((item, index) => {
         const badgeColor = item.verdict.includes('HIGHLY') 
@@ -301,7 +374,7 @@
       new vis.Network(container, { nodes, edges }, options);
     }
 
-    // Filter Logic
+    // 3. Filter Table
     function filterSnaData() {
       const channel = document.getElementById('sna-filter-channel').value;
       const niche = document.getElementById('sna-filter-niche').value;
@@ -317,7 +390,58 @@
       renderSnaTable(filtered);
     }
 
-    // Init on load
+    // 4. Modal Open & Close Functions
+    function openScanModal() {
+      document.getElementById('sna-scan-modal').classList.remove('hidden');
+    }
+
+    function closeScanModal() {
+      document.getElementById('sna-scan-modal').classList.add('hidden');
+    }
+
+    // 5. Submit Scan Handling
+    async function handleRunSnaScan(e) {
+      e.preventDefault();
+
+      const handle = document.getElementById('scan-handle').value.trim();
+      const channel = document.getElementById('scan-channel').value;
+      const cluster = document.getElementById('scan-cluster').value;
+      const type = document.getElementById('scan-type').value;
+
+      const btn = document.getElementById('btn-submit-scan');
+      btn.disabled = true;
+      btn.innerText = 'Menganalisis Jaringan...';
+
+      setTimeout(() => {
+        const newItem = {
+          id: Date.now(),
+          handle: handle.startsWith('@') ? handle : `@${handle}`,
+          channel,
+          centrality: `${Math.floor(Math.random() * 15) + 85}/100`,
+          auth: `${Math.floor(Math.random() * 8) + 92}%`,
+          cluster,
+          verdict: 'HIGHLY RECOMMENDED',
+          type
+        };
+
+        mockInfluencerData.unshift(newItem);
+        renderSnaTable(mockInfluencerData);
+
+        document.getElementById('kpi-total-influencers').innerText = mockInfluencerData.length;
+
+        e.target.reset();
+        closeScanModal();
+
+        btn.disabled = false;
+        btn.innerText = 'Mulai Analisis AI';
+      }, 1000);
+    }
+
+    function runAiDecisionCheck() {
+      alert('Memperbarui analisis matriks keputusan AI...');
+    }
+
+    // Init Page Load
     window.addEventListener('DOMContentLoaded', () => {
       renderSnaTable(mockInfluencerData);
       initNetworkGraph();
