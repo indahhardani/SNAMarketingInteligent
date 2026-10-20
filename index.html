@@ -17,32 +17,32 @@
   <style>
     /* Custom Scrollbar */
     .custom-scrollbar::-webkit-scrollbar { width: 6px; }
-    .custom-scrollbar::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.6); }
-    .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(51, 65, 85, 0.8); border-radius: 4px; }
-    .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.8); }
+    .custom-scrollbar::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.4); }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.4); }
   </style>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans min-h-screen flex flex-col antialiased">
+<body class="bg-gradient-to-r from-[#1d6ee4] via-[#1e99c8] to-[#35ba9b] text-slate-100 font-sans min-h-screen flex flex-col antialiased bg-fixed">
 
   <!-- Top Navigation Bar -->
-  <header class="bg-slate-800/80 backdrop-blur border-b border-slate-700/60 px-6 py-4 flex items-center justify-between sticky top-0 z-30">
+  <header class="bg-slate-900/60 backdrop-blur-md border-b border-white/10 px-6 py-4 flex items-center justify-between sticky top-0 z-30">
     <div class="flex items-center gap-3">
-      <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-black text-white shadow-lg shadow-cyan-500/20 text-sm">
-        SNA
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-400 to-emerald-400 flex items-center justify-center font-black text-slate-950 shadow-lg shadow-cyan-500/20 text-sm">
+        HP
       </div>
       <div>
         <h1 class="text-sm font-bold text-white tracking-wide">HypePulse</h1>
-        <p class="text-[10px] text-slate-400">AI Breakthrough Ecosystem — Decision Engine</p>
+        <p class="text-[10px] text-cyan-100/70">AI Breakthrough Ecosystem — Decision Engine</p>
       </div>
     </div>
 
     <!-- Status & Back Link -->
     <div class="flex items-center gap-3">
-      <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Dedicated SNA Key Active
+      <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-emerald-400/20 text-emerald-200 border border-emerald-400/30 backdrop-blur-sm">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse"></span> Dedicated SNA Key Active
       </span>
       <!-- URL Portal Utama AI Breakthrough -->
-      <a href="https://indahhardani.github.io" class="bg-slate-700 hover:bg-slate-600 text-slate-200 px-3 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-2">
+      <a href="https://indahhardani.github.io" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-3 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-2 backdrop-blur-sm">
         <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Portal Utama
       </a>
     </div>
@@ -53,72 +53,72 @@
 
     <!-- 1. Top KPI Summary Cards -->
     <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-      <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-4 flex items-center justify-between shadow-sm">
+      <div class="bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex items-center justify-between shadow-lg">
         <div>
-          <p class="text-[11px] text-slate-400 font-medium">Mapped Influencers</p>
+          <p class="text-[11px] text-cyan-100/80 font-medium">Mapped Influencers</p>
           <h3 class="text-xl font-bold text-white mt-1" id="kpi-total-influencers">4</h3>
-          <p class="text-[10px] text-cyan-400 mt-0.5">Across 4 Social Channels</p>
+          <p class="text-[10px] text-cyan-200 mt-0.5">Across 4 Social Channels</p>
         </div>
-        <div class="p-3 bg-cyan-500/10 text-cyan-400 rounded-xl">
+        <div class="p-3 bg-cyan-400/20 text-cyan-200 rounded-xl border border-cyan-400/30">
           <i data-lucide="users" class="w-5 h-5"></i>
         </div>
       </div>
 
-      <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-4 flex items-center justify-between shadow-sm">
+      <div class="bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex items-center justify-between shadow-lg">
         <div>
-          <p class="text-[11px] text-slate-400 font-medium">Avg. Engagement Authenticity</p>
-          <h3 class="text-xl font-bold text-emerald-400 mt-1" id="kpi-auth-score">94.2%</h3>
-          <p class="text-[10px] text-slate-400 mt-0.5">Low Bot Interference</p>
+          <p class="text-[11px] text-cyan-100/80 font-medium">Avg. Engagement Authenticity</p>
+          <h3 class="text-xl font-bold text-emerald-300 mt-1" id="kpi-auth-score">94.2%</h3>
+          <p class="text-[10px] text-cyan-100/70 mt-0.5">Low Bot Interference</p>
         </div>
-        <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl">
+        <div class="p-3 bg-emerald-400/20 text-emerald-300 rounded-xl border border-emerald-400/30">
           <i data-lucide="shield-check" class="w-5 h-5"></i>
         </div>
       </div>
 
-      <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-4 flex items-center justify-between shadow-sm">
+      <div class="bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex items-center justify-between shadow-lg">
         <div>
-          <p class="text-[11px] text-slate-400 font-medium">Top Performing Channel</p>
-          <h3 class="text-xl font-bold text-purple-400 mt-1">TikTok & IG</h3>
-          <p class="text-[10px] text-slate-400 mt-0.5">Highest Community Virality</p>
+          <p class="text-[11px] text-cyan-100/80 font-medium">Top Performing Channel</p>
+          <h3 class="text-xl font-bold text-purple-300 mt-1">TikTok & IG</h3>
+          <p class="text-[10px] text-cyan-100/70 mt-0.5">Highest Community Virality</p>
         </div>
-        <div class="p-3 bg-purple-500/10 text-purple-400 rounded-xl">
+        <div class="p-3 bg-purple-400/20 text-purple-300 rounded-xl border border-purple-400/30">
           <i data-lucide="trending-up" class="w-5 h-5"></i>
         </div>
       </div>
 
-      <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-4 flex items-center justify-between shadow-sm">
+      <div class="bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex items-center justify-between shadow-lg">
         <div>
-          <p class="text-[11px] text-slate-400 font-medium">Budget Efficiency Index</p>
-          <h3 class="text-xl font-bold text-amber-400 mt-1">3.8x ROI</h3>
-          <p class="text-[10px] text-slate-400 mt-0.5">Vs Standard Ad Spend</p>
+          <p class="text-[11px] text-cyan-100/80 font-medium">Budget Efficiency Index</p>
+          <h3 class="text-xl font-bold text-amber-300 mt-1">3.8x ROI</h3>
+          <p class="text-[10px] text-cyan-100/70 mt-0.5">Vs Standard Ad Spend</p>
         </div>
-        <div class="p-3 bg-amber-500/10 text-amber-400 rounded-xl">
+        <div class="p-3 bg-amber-400/20 text-amber-300 rounded-xl border border-amber-400/30">
           <i data-lucide="zap" class="w-5 h-5"></i>
         </div>
       </div>
     </div>
 
     <!-- 2. Filter & Controls Bar -->
-    <div class="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-4 flex flex-col md:flex-row gap-3 items-center justify-between">
+    <div class="bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex flex-col md:flex-row gap-3 items-center justify-between shadow-lg">
       <div class="flex flex-wrap gap-2 w-full md:w-auto">
-        <select id="sna-filter-channel" onchange="filterSnaData()" class="bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-cyan-500">
+        <select id="sna-filter-channel" onchange="filterSnaData()" class="bg-slate-950/60 border border-white/20 rounded-xl px-3 py-2 text-xs text-slate-100 focus:outline-none focus:border-cyan-400">
           <option value="">Semua Kanal (All Channels)</option>
           <option value="TikTok">TikTok</option>
           <option value="Instagram">Instagram</option>
           <option value="YouTube">YouTube</option>
         </select>
 
-        <select id="sna-filter-niche" onchange="filterSnaData()" class="bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-cyan-500">
+        <select id="sna-filter-niche" onchange="filterSnaData()" class="bg-slate-950/60 border border-white/20 rounded-xl px-3 py-2 text-xs text-slate-100 focus:outline-none focus:border-cyan-400">
           <option value="">Semua Cluster / Minat</option>
           <option value="Skincare Tech">Skincare Tech</option>
           <option value="Beauty Vlogger">Beauty Vlogger</option>
           <option value="Dermatology">Dermatology</option>
         </select>
 
-        <input type="text" id="sna-search-keyword" oninput="filterSnaData()" placeholder="Cari akun / topik..." class="bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 w-full md:w-64 focus:outline-none focus:border-cyan-500">
+        <input type="text" id="sna-search-keyword" oninput="filterSnaData()" placeholder="Cari akun / topik..." class="bg-slate-950/60 border border-white/20 rounded-xl px-3 py-2 text-xs text-slate-100 w-full md:w-64 focus:outline-none focus:border-cyan-400 placeholder-slate-400">
       </div>
 
-      <button onclick="openScanModal()" class="w-full md:w-auto bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-4 py-2 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20">
+      <button onclick="openScanModal()" class="w-full md:w-auto bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-300 hover:to-emerald-300 text-slate-950 px-4 py-2 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20">
         <i data-lucide="scan-face" class="w-4 h-4"></i> Analisis Influencer Baru
       </button>
     </div>
@@ -127,72 +127,72 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
       
       <!-- Left: Interactive Network Graph Container (8 Cols) -->
-      <div class="lg:col-span-8 bg-slate-800/40 border border-slate-700/60 rounded-2xl p-5 flex flex-col h-[520px] relative overflow-hidden">
+      <div class="lg:col-span-8 bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-2xl p-5 flex flex-col h-[520px] relative overflow-hidden shadow-lg">
         <div class="flex items-center justify-between mb-3 z-10">
           <div>
             <h2 class="text-sm font-bold text-white flex items-center gap-2">
-              <i data-lucide="network" class="w-4 h-4 text-cyan-400"></i> Social Network Graph Map
+              <i data-lucide="network" class="w-4 h-4 text-cyan-300"></i> Social Network Graph Map
             </h2>
-            <p class="text-[11px] text-slate-400">Visualisasi keterhubungan antar-influencer & klaster audiens</p>
+            <p class="text-[11px] text-cyan-100/70">Visualisasi keterhubungan antar-influencer & klaster audiens</p>
           </div>
           <div class="flex gap-2">
-            <span class="text-[10px] bg-slate-900 border border-slate-700 px-2.5 py-1 rounded-lg text-slate-300">
+            <span class="text-[10px] bg-slate-950/60 border border-white/10 px-2.5 py-1 rounded-lg text-slate-200">
               <span class="inline-block w-2 h-2 rounded-full bg-cyan-400 mr-1"></span> Connector Node
             </span>
-            <span class="text-[10px] bg-slate-900 border border-slate-700 px-2.5 py-1 rounded-lg text-slate-300">
+            <span class="text-[10px] bg-slate-950/60 border border-white/10 px-2.5 py-1 rounded-lg text-slate-200">
               <span class="inline-block w-2 h-2 rounded-full bg-purple-400 mr-1"></span> Community Hub
             </span>
           </div>
         </div>
 
         <!-- Canvas Tempat Vis.js Menggambar Graf Jaringan -->
-        <div id="sna-graph-canvas" class="flex-1 w-full h-full bg-slate-950/70 rounded-xl border border-slate-800/80 relative overflow-hidden"></div>
+        <div id="sna-graph-canvas" class="flex-1 w-full h-full bg-slate-950/70 rounded-xl border border-white/10 relative overflow-hidden"></div>
       </div>
 
       <!-- Right: AI Decision & Recommendation Panel (4 Cols) -->
-      <div class="lg:col-span-4 bg-slate-800/40 border border-slate-700/60 rounded-2xl p-5 flex flex-col h-[520px] space-y-4">
+      <div class="lg:col-span-4 bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-2xl p-5 flex flex-col h-[520px] space-y-4 shadow-lg">
         <div>
           <h2 class="text-sm font-bold text-white flex items-center gap-2">
-            <i data-lucide="sparkles" class="w-4 h-4 text-amber-400"></i> AI Decision Engine
+            <i data-lucide="sparkles" class="w-4 h-4 text-amber-300"></i> AI Decision Engine
           </h2>
-          <p class="text-[11px] text-slate-400">Rekomendasi alokasi & keputusan marketing</p>
+          <p class="text-[11px] text-cyan-100/70">Rekomendasi alokasi & keputusan marketing</p>
         </div>
 
         <!-- Output Decision Box -->
-        <div class="flex-1 bg-slate-900/80 border border-slate-700/50 rounded-xl p-4 overflow-y-auto text-xs space-y-3 custom-scrollbar" id="ai-decision-box">
-          <div class="p-3 bg-cyan-500/10 border border-cyan-500/20 rounded-lg text-cyan-200">
-            <p class="font-bold text-[11px] text-cyan-400 mb-1">Rekomendasi Alokasi Influencer:</p>
+        <div class="flex-1 bg-slate-950/60 border border-white/10 rounded-xl p-4 overflow-y-auto text-xs space-y-3 custom-scrollbar" id="ai-decision-box">
+          <div class="p-3 bg-cyan-500/20 border border-cyan-400/30 rounded-lg text-cyan-100">
+            <p class="font-bold text-[11px] text-cyan-300 mb-1">Rekomendasi Alokasi Influencer:</p>
             <p class="text-[11px] leading-relaxed">
               Disarankan mengalokasikan <span class="font-bold text-white">60% budget</span> ke 3 Micro-Connector (Cluster Skincare Tech) karena memiliki korelasi *bridge engagement* 2.4x lebih tinggi.
             </p>
           </div>
 
-          <div class="p-3 bg-slate-800/80 border border-slate-700/50 rounded-lg">
-            <p class="font-semibold text-slate-300 mb-1">Channel Efficiency Deployment:</p>
+          <div class="p-3 bg-slate-900/60 border border-white/10 rounded-lg">
+            <p class="font-semibold text-slate-200 mb-1">Channel Efficiency Deployment:</p>
             
             <div class="mt-3">
-              <div class="flex items-center justify-between text-slate-400 text-[11px]">
+              <div class="flex items-center justify-between text-slate-300 text-[11px]">
                 <span>TikTok (Organic Reach)</span>
-                <span class="text-emerald-400 font-bold">88/100</span>
+                <span class="text-emerald-300 font-bold">88/100</span>
               </div>
-              <div class="w-full bg-slate-700 h-1.5 rounded-full mt-1">
+              <div class="w-full bg-slate-950 h-1.5 rounded-full mt-1 overflow-hidden">
                 <div class="bg-emerald-400 h-1.5 rounded-full" style="width: 88%"></div>
               </div>
             </div>
 
             <div class="mt-3">
-              <div class="flex items-center justify-between text-slate-400 text-[11px]">
+              <div class="flex items-center justify-between text-slate-300 text-[11px]">
                 <span>Instagram Reels</span>
-                <span class="text-purple-400 font-bold">72/100</span>
+                <span class="text-purple-300 font-bold">72/100</span>
               </div>
-              <div class="w-full bg-slate-700 h-1.5 rounded-full mt-1">
+              <div class="w-full bg-slate-950 h-1.5 rounded-full mt-1 overflow-hidden">
                 <div class="bg-purple-400 h-1.5 rounded-full" style="width: 72%"></div>
               </div>
             </div>
           </div>
         </div>
 
-        <button onclick="runAiDecisionCheck()" class="w-full bg-slate-700 hover:bg-slate-600 text-slate-100 py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 border border-slate-600">
+        <button onclick="runAiDecisionCheck()" class="w-full bg-white/10 hover:bg-white/20 text-white py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 border border-white/20 backdrop-blur-sm">
           <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Regenerate AI Recommendation
         </button>
       </div>
@@ -200,18 +200,18 @@
     </div>
 
     <!-- 4. Detailed Influencer Matrix Table -->
-    <div class="bg-slate-800/40 border border-slate-700/60 rounded-2xl overflow-hidden">
-      <div class="p-4 border-b border-slate-700/60 flex items-center justify-between">
+    <div class="bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden shadow-lg">
+      <div class="p-4 border-b border-white/10 flex items-center justify-between">
         <h3 class="text-xs font-bold text-white flex items-center gap-2">
-          <i data-lucide="list-filter" class="w-4 h-4 text-cyan-400"></i> Influencer Network Analysis List
+          <i data-lucide="list-filter" class="w-4 h-4 text-cyan-300"></i> Influencer Network Analysis List
         </h3>
-        <span class="text-[11px] text-slate-400">Menampilkan hasil pemetaan jaringan</span>
+        <span class="text-[11px] text-cyan-100/70">Menampilkan hasil pemetaan jaringan</span>
       </div>
 
       <div class="overflow-x-auto">
         <table class="w-full text-left border-collapse text-xs">
           <thead>
-            <tr class="bg-slate-900/60 border-b border-slate-700/60 text-slate-400 font-semibold">
+            <tr class="bg-slate-950/50 border-b border-white/10 text-cyan-100/80 font-semibold">
               <th class="p-3 w-12 text-center">No</th>
               <th class="p-3">Influencer / Akun</th>
               <th class="p-3">Kanal</th>
@@ -221,7 +221,7 @@
               <th class="p-3 text-center">AI Verdict</th>
             </tr>
           </thead>
-          <tbody id="sna-table-body" class="divide-y divide-slate-700/40 text-slate-300">
+          <tbody id="sna-table-body" class="divide-y divide-white/5 text-slate-200">
             <!-- Data di-render lewat JavaScript -->
           </tbody>
         </table>
@@ -232,12 +232,12 @@
 
   <!-- MODAL: ANALISIS INFLUENCER BARU -->
   <div id="sna-scan-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
-    <div class="bg-slate-900 border border-slate-700 w-full max-w-lg rounded-2xl flex flex-col shadow-2xl overflow-hidden">
+    <div class="bg-slate-900/90 border border-white/20 w-full max-w-lg rounded-2xl flex flex-col shadow-2xl overflow-hidden backdrop-blur-md">
       
       <!-- Modal Header -->
-      <div class="px-6 py-4 border-b border-slate-700/80 flex items-center justify-between bg-slate-800/50">
+      <div class="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-white/5">
         <h3 class="text-sm font-bold text-white flex items-center gap-2">
-          <i data-lucide="scan-face" class="w-4 h-4 text-cyan-400"></i> Analisis Jaringan Influencer
+          <i data-lucide="scan-face" class="w-4 h-4 text-cyan-300"></i> Analisis Jaringan Influencer
         </h3>
         <button type="button" onclick="closeScanModal()" class="text-slate-400 hover:text-white transition">
           <i data-lucide="x" class="w-5 h-5"></i>
@@ -249,15 +249,15 @@
         
         <!-- Username / Handle -->
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Username / Handle Akun <span class="text-rose-400">*</span></label>
-          <input type="text" id="scan-handle" required placeholder="Contoh: @skincare_influencer" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-slate-100 focus:outline-none focus:border-cyan-500">
+          <label class="block font-semibold text-slate-200 mb-1">Username / Handle Akun <span class="text-rose-400">*</span></label>
+          <input type="text" id="scan-handle" required placeholder="Contoh: @skincare_influencer" class="w-full bg-slate-950/80 border border-white/20 rounded-xl px-3.5 py-2.5 text-slate-100 focus:outline-none focus:border-cyan-400 placeholder-slate-500">
         </div>
 
         <!-- Kanal & Cluster -->
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="block font-semibold text-slate-300 mb-1">Kanal Social Media <span class="text-rose-400">*</span></label>
-            <select id="scan-channel" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-slate-100 focus:outline-none focus:border-cyan-500">
+            <label class="block font-semibold text-slate-200 mb-1">Kanal Social Media <span class="text-rose-400">*</span></label>
+            <select id="scan-channel" required class="w-full bg-slate-950/80 border border-white/20 rounded-xl px-3 py-2.5 text-slate-100 focus:outline-none focus:border-cyan-400">
               <option value="TikTok">TikTok</option>
               <option value="Instagram">Instagram</option>
               <option value="YouTube">YouTube</option>
@@ -266,8 +266,8 @@
           </div>
 
           <div>
-            <label class="block font-semibold text-slate-300 mb-1">Cluster / Niche Topik <span class="text-rose-400">*</span></label>
-            <select id="scan-cluster" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-slate-100 focus:outline-none focus:border-cyan-500">
+            <label class="block font-semibold text-slate-200 mb-1">Cluster / Niche Topik <span class="text-rose-400">*</span></label>
+            <select id="scan-cluster" required class="w-full bg-slate-950/80 border border-white/20 rounded-xl px-3 py-2.5 text-slate-100 focus:outline-none focus:border-cyan-400">
               <option value="Skincare Tech">Skincare Tech</option>
               <option value="Beauty Vlogger">Beauty Vlogger</option>
               <option value="Dermatology">Dermatology</option>
@@ -278,8 +278,8 @@
 
         <!-- Estimasi Tipe Influencer -->
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Tipe Influencer</label>
-          <select id="scan-type" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-slate-100 focus:outline-none focus:border-cyan-500">
+          <label class="block font-semibold text-slate-200 mb-1">Tipe Influencer</label>
+          <select id="scan-type" class="w-full bg-slate-950/80 border border-white/20 rounded-xl px-3 py-2.5 text-slate-100 focus:outline-none focus:border-cyan-400">
             <option value="connector">Connector Node (Jembatan Komunitas)</option>
             <option value="hub">Community Hub (Macro / Core)</option>
             <option value="member">Micro Influencer</option>
@@ -287,9 +287,9 @@
         </div>
 
         <!-- Actions -->
-        <div class="pt-3 border-t border-slate-800 flex justify-end gap-2">
-          <button type="button" onclick="closeScanModal()" class="bg-slate-800 text-slate-300 px-4 py-2 rounded-xl font-bold hover:bg-slate-700 transition">Batal</button>
-          <button type="submit" id="btn-submit-scan" class="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-5 py-2 rounded-xl font-bold transition shadow-lg shadow-cyan-500/20">
+        <div class="pt-3 border-t border-white/10 flex justify-end gap-2">
+          <button type="button" onclick="closeScanModal()" class="bg-white/10 text-slate-200 px-4 py-2 rounded-xl font-bold hover:bg-white/20 transition">Batal</button>
+          <button type="submit" id="btn-submit-scan" class="bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-300 hover:to-emerald-300 text-slate-950 px-5 py-2 rounded-xl font-bold transition shadow-lg shadow-cyan-500/20">
             Mulai Analisis AI
           </button>
         </div>
@@ -317,25 +317,25 @@
       if (!tbody) return;
 
       if (data.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="7" class="p-4 text-center text-slate-500">Tidak ada data influencer ditemukan.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="7" class="p-4 text-center text-cyan-100/60">Tidak ada data influencer ditemukan.</td></tr>`;
         return;
       }
 
       tbody.innerHTML = data.map((item, index) => {
         const badgeColor = item.verdict.includes('HIGHLY') 
-          ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' 
+          ? 'bg-emerald-400/20 text-emerald-300 border-emerald-400/30' 
           : item.verdict.includes('RECOMMENDED') 
-          ? 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20' 
-          : 'bg-amber-500/10 text-amber-400 border-amber-500/20';
+          ? 'bg-cyan-400/20 text-cyan-300 border-cyan-400/30' 
+          : 'bg-amber-400/20 text-amber-300 border-amber-400/30';
 
         return `
-          <tr class="hover:bg-slate-800/40 transition">
-            <td class="p-3 text-center font-semibold text-slate-500">${index + 1}</td>
+          <tr class="hover:bg-white/5 transition">
+            <td class="p-3 text-center font-semibold text-cyan-100/50">${index + 1}</td>
             <td class="p-3 font-bold text-white">${item.handle}</td>
-            <td class="p-3 text-slate-300">${item.channel}</td>
-            <td class="p-3 font-semibold text-cyan-400">${item.centrality}</td>
-            <td class="p-3 text-emerald-400 font-semibold">${item.auth}</td>
-            <td class="p-3 text-slate-300">${item.cluster}</td>
+            <td class="p-3 text-slate-200">${item.channel}</td>
+            <td class="p-3 font-semibold text-cyan-300">${item.centrality}</td>
+            <td class="p-3 text-emerald-300 font-semibold">${item.auth}</td>
+            <td class="p-3 text-slate-200">${item.cluster}</td>
             <td class="p-3 text-center">
               <span class="px-2.5 py-1 rounded-full text-[10px] font-bold border ${badgeColor}">
                 ${item.verdict}
@@ -352,15 +352,15 @@
       if (!container) return;
 
       const nodes = new vis.DataSet([
-        { id: 1, label: '@skincare_guru\n(Connector)', color: { background: '#06b6d4', border: '#22d3ee' }, shape: 'ellipse', font: { color: '#ffffff', size: 12 } },
+        { id: 1, label: '@skincare_guru\n(Connector)', color: { background: '#22d3ee', border: '#67e8f9' }, shape: 'ellipse', font: { color: '#0f172a', size: 12, strokeWidth: 0 } },
         { id: 2, label: '@beauty_review_id', color: { background: '#c084fc', border: '#e879f9' }, shape: 'ellipse', font: { color: '#ffffff', size: 12 } },
-        { id: 3, label: '@dr_dermatology', color: { background: '#06b6d4', border: '#22d3ee' }, shape: 'ellipse', font: { color: '#ffffff', size: 12 } },
+        { id: 3, label: '@dr_dermatology', color: { background: '#22d3ee', border: '#67e8f9' }, shape: 'ellipse', font: { color: '#0f172a', size: 12, strokeWidth: 0 } },
         { id: 4, label: '@glow_daily', color: { background: '#475569', border: '#64748b' }, shape: 'ellipse', font: { color: '#ffffff', size: 12 } },
-        { id: 5, label: 'Community Skincare', color: { background: '#1e293b', border: '#334155' }, shape: 'box', font: { color: '#94a3b8', size: 11 } }
+        { id: 5, label: 'Community Skincare', color: { background: '#0f172a', border: '#334155' }, shape: 'box', font: { color: '#38bdf8', size: 11 } }
       ]);
 
       const edges = new vis.DataSet([
-        { from: 1, to: 5, width: 3, color: { color: '#06b6d4' } },
+        { from: 1, to: 5, width: 3, color: { color: '#22d3ee' } },
         { from: 2, to: 5, width: 2, color: { color: '#c084fc' } },
         { from: 3, to: 1, width: 2, color: { color: '#38bdf8' } },
         { from: 4, to: 2, width: 1, color: { color: '#64748b' } }
