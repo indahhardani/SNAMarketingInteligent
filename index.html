@@ -5,8 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VibeCheck — AI Brand & Influencer Optimizer</title>
   
+  <!-- Google Fonts: Sora -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        fontFamily: {
+          sans: ['Sora', 'sans-serif'],
+          serif: ['Sora', 'sans-serif'],
+          mono: ['Sora', 'sans-serif']
+        }
+      }
+    };
+  </script>
   
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -15,6 +31,11 @@
   <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 
   <style>
+    /* Font global: Sora */
+    html, body, button, input, select, textarea, table, th, td {
+      font-family: 'Sora', sans-serif;
+    }
+
     /* Custom Scrollbar */
     .custom-scrollbar::-webkit-scrollbar { width: 6px; }
     .custom-scrollbar::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.4); }
@@ -28,7 +49,7 @@
   <header class="bg-slate-900/60 backdrop-blur-md border-b border-white/10 px-6 py-4 flex items-center justify-between sticky top-0 z-30">
     <div class="flex items-center gap-3">
       <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-400 to-emerald-400 flex items-center justify-center font-black text-slate-950 shadow-lg shadow-cyan-500/20 text-sm">
-        HP
+        VC
       </div>
       <div>
         <h1 class="text-sm font-bold text-white tracking-wide">VibeCheck</h1>
@@ -454,7 +475,7 @@
         label: `${item.handle}\n(${item.cluster})`,
         color: idx % 2 === 0 ? { background: '#22d3ee', border: '#67e8f9' } : { background: '#c084fc', border: '#e879f9' },
         shape: 'ellipse',
-        font: { color: idx % 2 === 0 ? '#0f172a' : '#ffffff', size: 10 }
+        font: { color: idx % 2 === 0 ? '#0f172a' : '#ffffff', size: 10, face: 'Sora' }
       }));
 
       nodesArray.push({
@@ -462,7 +483,7 @@
         label: `Komunitas ${categoryName}`,
         color: { background: '#0f172a', border: '#334155' },
         shape: 'box',
-        font: { color: '#38bdf8', size: 12 }
+        font: { color: '#38bdf8', size: 12, face: 'Sora' }
       });
 
       const edgesArray = currentList.map((item) => ({
@@ -513,6 +534,14 @@
       initNetworkGraph(initialCategory);
       updateTrendWave(initialCategory);
     });
+  
+    // Redraw graph setelah font Sora siap (canvas butuh font ter-load)
+    if (document.fonts && document.fonts.load) {
+      Promise.all([
+        document.fonts.load("10px Sora"),
+        document.fonts.load("12px Sora")
+      ]).then(() => { if (networkGraph) networkGraph.redraw(); });
+    }
   </script>
 </body>
 </html>
