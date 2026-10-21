@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HypePulse — AI Breakthrough</title>
+  <title>HypePulse — AI Brand & Influencer Optimizer</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -11,7 +11,7 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Vis.js Network Graph Library (Khusus Pemetaan Node SNA) -->
+  <!-- Vis.js Network Graph Library (Pemetaan Node SNA) -->
   <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 
   <style>
@@ -24,62 +24,152 @@
 </head>
 <body class="bg-gradient-to-r from-[#1d6ee4] via-[#1e99c8] to-[#35ba9b] text-slate-100 font-sans min-h-screen flex flex-col antialiased bg-fixed">
 
-  <!-- Top Navigation Bar -->
+  <!-- Header / Navigation -->
   <header class="bg-slate-900/60 backdrop-blur-md border-b border-white/10 px-6 py-4 flex items-center justify-between sticky top-0 z-30">
     <div class="flex items-center gap-3">
       <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-400 to-emerald-400 flex items-center justify-center font-black text-slate-950 shadow-lg shadow-cyan-500/20 text-sm">
         HP
       </div>
       <div>
-        <h1 class="text-sm font-bold text-white tracking-wide">HypePulse</h1>
-        <p class="text-[10px] text-cyan-100/70">AI Breakthrough Ecosystem — Decision Engine</p>
+        <h1 class="text-sm font-bold text-white tracking-wide">HypePulse AI</h1>
+        <p class="text-[10px] text-cyan-100/70">Influencer, Channels & Trend Optimizer</p>
       </div>
     </div>
 
-    <!-- Status & Back Link -->
     <div class="flex items-center gap-3">
       <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-emerald-400/20 text-emerald-200 border border-emerald-400/30 backdrop-blur-sm">
-        <span class="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse"></span> Dedicated SNA Key Active
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse"></span> AI Engine Active
       </span>
-      <!-- URL Portal Utama AI Breakthrough -->
-      <a href="https://indahhardani.github.io/LandingPage/" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-3 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-2 backdrop-blur-sm">
-        <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Portal Utama
-      </a>
     </div>
   </header>
 
-  <!-- Main Content Area -->
+  <!-- Main Content -->
   <main class="flex-1 p-6 space-y-6 max-w-[1600px] w-full mx-auto">
 
-    <!-- 1. Top KPI Summary Cards -->
+    <!-- 1. Form Strategy & Budget Input -->
+    <div class="bg-slate-900/50 backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-xl">
+      <h2 class="text-sm font-bold text-white mb-3 flex items-center gap-2">
+        <i data-lucide="sliders" class="w-4 h-4 text-cyan-300"></i> Pengaturan Kampanye Marketing
+      </h2>
+      <form onsubmit="handleBudgetCalculation(event)" class="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs">
+        <div>
+          <label class="block font-semibold text-slate-200 mb-1">Total Budget (Rp)</label>
+          <input type="number" id="input-budget" value="10000000" class="w-full bg-slate-950/70 border border-white/20 rounded-xl px-3 py-2 text-white font-bold focus:outline-none focus:border-cyan-400">
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-200 mb-1">Kategori Produk</label>
+          <select id="input-category" class="w-full bg-slate-950/70 border border-white/20 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-cyan-400">
+            <option value="Obat Bahan Alam / Jamu / Herbal">Obat bahan alam/jamu/herbal</option>
+            <option value="Suplemen Kesehatan">Suplemen kesehatan</option>
+            <option value="Kosmetika">Kosmetika</option>
+            <option value="Apparel Bayi & Anak">Apparel bayi & anak</option>
+            <option value="T-shirt / Daily Apparel">T-shirt/ daily apparel</option>
+            <option value="Batik">Batik</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-200 mb-1">Target Utama (Goal)</label>
+          <select id="input-goal" class="w-full bg-slate-950/70 border border-white/20 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-cyan-400">
+            <option value="Edukasi & Brand Trust">Edukasi & Kepercayaan Publik</option>
+            <option value="Viral & Reach">Jangkauan Luas / Viral</option>
+            <option value="Conversion / Sales">Penjualan (Sales)</option>
+          </select>
+        </div>
+        <div class="flex items-end">
+          <button type="submit" class="w-full bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-300 hover:to-emerald-300 text-slate-950 py-2 rounded-xl font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20">
+            <i data-lucide="sparkles" class="w-4 h-4"></i> Analisis Skenario
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- 2. TrendWave Radar (Social Listening) — MOVED TO TOP -->
+    <div class="bg-slate-900/50 backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-xl relative overflow-hidden">
+      <!-- Ambient Glow Effect -->
+      <div class="absolute -right-16 -top-16 w-60 h-60 bg-rose-500/10 blur-3xl rounded-full pointer-events-none"></div>
+
+      <div class="mb-4 flex items-center justify-between">
+        <div>
+          <h2 class="text-sm font-bold text-white flex items-center gap-2.5">
+            <!-- Red Dot Animation -->
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-rose-500"></span>
+            </span>
+            TrendWave Radar™ 
+            <span class="text-xs text-rose-300/80 italic font-normal tracking-wide">Live Social Listening</span>
+          </h2>
+          <p class="text-[11px] text-cyan-100/70 mt-0.5">Menganalisis anomali komentar dan keyword yang sedang viral di sosial media terkait kategori produkmu.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+        <!-- Visual Dynamic Word Cloud Keywords -->
+        <div class="bg-slate-950/70 border border-white/10 rounded-xl p-4 flex flex-col justify-between">
+          <p class="text-[11px] font-semibold text-slate-300 mb-3 flex items-center gap-1.5">
+            <i data-lucide="hash" class="w-3.5 h-3.5 text-cyan-400"></i> Top Rising Keywords (24-48 Jam)
+          </p>
+          <div class="flex flex-wrap items-center gap-2.5 min-h-[90px] p-1" id="trend-keywords-container">
+            <!-- Dynamic Word Cloud Rendered via JS -->
+          </div>
+        </div>
+
+        <!-- Wave Momentum Score -->
+        <div class="bg-slate-950/70 border border-white/10 rounded-xl p-4 flex flex-col justify-center items-center text-center">
+          <p class="text-[11px] font-semibold text-slate-300 mb-1">Status Momentum Gelombang</p>
+          <div class="flex items-center justify-center gap-3 my-2">
+            <div class="w-16 h-16 rounded-full border-4 border-emerald-400 flex items-center justify-center shadow-[0_0_15px_rgba(52,211,153,0.3)]">
+              <span class="text-lg font-bold text-emerald-300" id="trend-score">95</span>
+            </div>
+            <div class="text-left">
+              <h4 class="text-sm font-bold text-emerald-300 uppercase tracking-wider" id="trend-status">VIRAL WAVE</h4>
+              <p class="text-[10px] text-slate-400 mt-0.5">Waktu terbaik untuk *"Ride the Wave"*</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Actionable Content Ideation -->
+        <div class="bg-slate-950/70 border border-white/10 rounded-xl p-4 relative overflow-hidden flex flex-col justify-between">
+          <div class="absolute top-0 right-0 p-2 opacity-10"><i data-lucide="lightbulb" class="w-12 h-12"></i></div>
+          <p class="text-[11px] font-semibold text-amber-300 mb-2 flex items-center gap-1.5">
+            <i data-lucide="bot" class="w-3.5 h-3.5"></i> AI Content Ideation
+          </p>
+          <p class="text-[11px] text-slate-200 leading-relaxed" id="trend-ai-idea">
+            <!-- Diisi lewat JS -->
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. KPI Summary Cards -->
     <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
       <div class="bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex items-center justify-between shadow-lg">
         <div>
-          <p class="text-[11px] text-cyan-100/80 font-medium">Mapped Influencers</p>
-          <h3 class="text-xl font-bold text-white mt-1" id="kpi-total-influencers">4</h3>
-          <p class="text-[10px] text-cyan-200 mt-0.5">Across 4 Social Channels</p>
+          <p class="text-[11px] text-cyan-100/80 font-medium">Total Anggaran Kampanye</p>
+          <h3 class="text-xl font-bold text-emerald-300 mt-1" id="kpi-budget">Rp 10.000.000</h3>
+          <p class="text-[10px] text-cyan-200 mt-0.5">Alokasi Optimal 100%</p>
         </div>
-        <div class="p-3 bg-cyan-400/20 text-cyan-200 rounded-xl border border-cyan-400/30">
-          <i data-lucide="users" class="w-5 h-5"></i>
+        <div class="p-3 bg-emerald-400/20 text-emerald-300 rounded-xl border border-emerald-400/30">
+          <i data-lucide="wallet" class="w-5 h-5"></i>
         </div>
       </div>
 
       <div class="bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex items-center justify-between shadow-lg">
         <div>
-          <p class="text-[11px] text-cyan-100/80 font-medium">Avg. Engagement Authenticity</p>
-          <h3 class="text-xl font-bold text-emerald-300 mt-1" id="kpi-auth-score">94.2%</h3>
-          <p class="text-[10px] text-cyan-100/70 mt-0.5">Low Bot Interference</p>
+          <p class="text-[11px] text-cyan-100/80 font-medium">Kredibilitas Audiens</p>
+          <h3 class="text-xl font-bold text-cyan-300 mt-1">95.4%</h3>
+          <p class="text-[10px] text-cyan-100/70 mt-0.5">Bebas dari Bot / Fake Followers</p>
         </div>
-        <div class="p-3 bg-emerald-400/20 text-emerald-300 rounded-xl border border-emerald-400/30">
+        <div class="p-3 bg-cyan-400/20 text-cyan-200 rounded-xl border border-cyan-400/30">
           <i data-lucide="shield-check" class="w-5 h-5"></i>
         </div>
       </div>
 
       <div class="bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex items-center justify-between shadow-lg">
         <div>
-          <p class="text-[11px] text-cyan-100/80 font-medium">Top Performing Channel</p>
-          <h3 class="text-xl font-bold text-purple-300 mt-1">TikTok & IG</h3>
-          <p class="text-[10px] text-cyan-100/70 mt-0.5">Highest Community Virality</p>
+          <p class="text-[11px] text-cyan-100/80 font-medium">Saluran Paling Relevan</p>
+          <h3 class="text-xl font-bold text-purple-300 mt-1" id="kpi-channels">TikTok & YouTube</h3>
+          <p class="text-[10px] text-cyan-100/70 mt-0.5">Berdasarkan Performa Kategori</p>
         </div>
         <div class="p-3 bg-purple-400/20 text-purple-300 rounded-xl border border-purple-400/30">
           <i data-lucide="trending-up" class="w-5 h-5"></i>
@@ -88,9 +178,9 @@
 
       <div class="bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex items-center justify-between shadow-lg">
         <div>
-          <p class="text-[11px] text-cyan-100/80 font-medium">Budget Efficiency Index</p>
-          <h3 class="text-xl font-bold text-amber-300 mt-1">3.8x ROI</h3>
-          <p class="text-[10px] text-cyan-100/70 mt-0.5">Vs Standard Ad Spend</p>
+          <p class="text-[11px] text-cyan-100/80 font-medium">Proyeksi Est. ROI</p>
+          <h3 class="text-xl font-bold text-amber-300 mt-1">4.2x</h3>
+          <p class="text-[10px] text-cyan-100/70 mt-0.5">Efisiensi via Influencer Tepat</p>
         </div>
         <div class="p-3 bg-amber-400/20 text-amber-300 rounded-xl border border-amber-400/30">
           <i data-lucide="zap" class="w-5 h-5"></i>
@@ -98,131 +188,104 @@
       </div>
     </div>
 
-    <!-- 2. Filter & Controls Bar -->
-    <div class="bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex flex-col md:flex-row gap-3 items-center justify-between shadow-lg">
-      <div class="flex flex-wrap gap-2 w-full md:w-auto">
-        <select id="sna-filter-channel" onchange="filterSnaData()" class="bg-slate-950/60 border border-white/20 rounded-xl px-3 py-2 text-xs text-slate-100 focus:outline-none focus:border-cyan-400">
-          <option value="">Semua Kanal (All Channels)</option>
-          <option value="TikTok">TikTok</option>
-          <option value="Instagram">Instagram</option>
-          <option value="YouTube">YouTube</option>
-        </select>
-
-        <select id="sna-filter-niche" onchange="filterSnaData()" class="bg-slate-950/60 border border-white/20 rounded-xl px-3 py-2 text-xs text-slate-100 focus:outline-none focus:border-cyan-400">
-          <option value="">Semua Cluster / Minat</option>
-          <option value="Skincare Tech">Skincare Tech</option>
-          <option value="Beauty Vlogger">Beauty Vlogger</option>
-          <option value="Dermatology">Dermatology</option>
-        </select>
-
-        <input type="text" id="sna-search-keyword" oninput="filterSnaData()" placeholder="Cari akun / topik..." class="bg-slate-950/60 border border-white/20 rounded-xl px-3 py-2 text-xs text-slate-100 w-full md:w-64 focus:outline-none focus:border-cyan-400 placeholder-slate-400">
-      </div>
-
-      <button onclick="openScanModal()" class="w-full md:w-auto bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-300 hover:to-emerald-300 text-slate-950 px-4 py-2 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20">
-        <i data-lucide="scan-face" class="w-4 h-4"></i> Analisis Influencer Baru
-      </button>
-    </div>
-
-    <!-- 3. Main Split View Grid (Graph vs AI Decision Box) -->
+    <!-- 4. Network Graph & AI Decision Engine -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
       
-      <!-- Left: Interactive Network Graph Container (8 Cols) -->
-      <div class="lg:col-span-8 bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-2xl p-5 flex flex-col h-[520px] relative overflow-hidden shadow-lg">
+      <!-- Graph Canvas (8 Cols) -->
+      <div class="lg:col-span-8 bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-2xl p-5 flex flex-col h-[480px] relative overflow-hidden shadow-lg">
         <div class="flex items-center justify-between mb-3 z-10">
           <div>
             <h2 class="text-sm font-bold text-white flex items-center gap-2">
-              <i data-lucide="network" class="w-4 h-4 text-cyan-300"></i> Social Network Graph Map
+              <i data-lucide="network" class="w-4 h-4 text-cyan-300"></i> Peta Komunitas & Influencer
             </h2>
-            <p class="text-[11px] text-cyan-100/70">Visualisasi keterhubungan antar-influencer & klaster audiens</p>
+            <p class="text-[11px] text-cyan-100/70">Keterhubungan audiens antar-kreator konten (SNA)</p>
           </div>
-          <div class="flex gap-2">
-            <span class="text-[10px] bg-slate-950/60 border border-white/10 px-2.5 py-1 rounded-lg text-slate-200">
-              <span class="inline-block w-2 h-2 rounded-full bg-cyan-400 mr-1"></span> Connector Node
+          <div class="flex gap-2 text-[10px]">
+            <span class="bg-slate-950/60 border border-white/10 px-2.5 py-1 rounded-lg text-slate-200 flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-cyan-400"></span> Mikro / Nano Node
             </span>
-            <span class="text-[10px] bg-slate-950/60 border border-white/10 px-2.5 py-1 rounded-lg text-slate-200">
-              <span class="inline-block w-2 h-2 rounded-full bg-purple-400 mr-1"></span> Community Hub
+            <span class="bg-slate-950/60 border border-white/10 px-2.5 py-1 rounded-lg text-slate-200 flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-purple-400"></span> Macro / Community Hub
             </span>
           </div>
         </div>
-
-        <!-- Canvas Tempat Vis.js Menggambar Graf Jaringan -->
-        <div id="sna-graph-canvas" class="flex-1 w-full h-full bg-slate-950/70 rounded-xl border border-white/10 relative overflow-hidden"></div>
+        <div id="sna-graph-canvas" class="flex-1 w-full h-full bg-slate-950/70 rounded-xl border border-white/10"></div>
       </div>
 
-      <!-- Right: AI Decision & Recommendation Panel (4 Cols) -->
-      <div class="lg:col-span-4 bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-2xl p-5 flex flex-col h-[520px] space-y-4 shadow-lg">
+      <!-- AI Decision Engine (4 Cols) -->
+      <div class="lg:col-span-4 bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-2xl p-5 flex flex-col h-[480px] space-y-4 shadow-lg">
         <div>
           <h2 class="text-sm font-bold text-white flex items-center gap-2">
-            <i data-lucide="sparkles" class="w-4 h-4 text-amber-300"></i> AI Decision Engine
+            <i data-lucide="cpu" class="w-4 h-4 text-amber-300"></i> AI Budgeting Rules
           </h2>
-          <p class="text-[11px] text-cyan-100/70">Rekomendasi alokasi & keputusan marketing</p>
+          <p class="text-[11px] text-cyan-100/70">Alokasi anggaran optimal</p>
         </div>
 
-        <!-- Output Decision Box -->
-        <div class="flex-1 bg-slate-950/60 border border-white/10 rounded-xl p-4 overflow-y-auto text-xs space-y-3 custom-scrollbar" id="ai-decision-box">
-          <div class="p-3 bg-cyan-500/20 border border-cyan-400/30 rounded-lg text-cyan-100">
-            <p class="font-bold text-[11px] text-cyan-300 mb-1">Rekomendasi Alokasi Influencer:</p>
-            <p class="text-[11px] leading-relaxed">
-              Disarankan mengalokasikan <span class="font-bold text-white">60% budget</span> ke 3 Micro-Connector (Cluster Skincare Tech) karena memiliki korelasi *bridge engagement* 2.4x lebih tinggi.
-            </p>
+        <div class="flex-1 bg-slate-950/60 border border-white/10 rounded-xl p-4 overflow-y-auto text-xs space-y-4 custom-scrollbar">
+          <div class="p-3 bg-emerald-500/20 border border-emerald-400/30 rounded-lg text-emerald-100">
+            <p class="font-bold text-[11px] text-emerald-300 mb-1">Strategi Portofolio Budget:</p>
+            <ul class="text-[11px] space-y-1 list-disc list-inside text-slate-200">
+              <li><b class="text-white">60%:</b> 3-4 Micro-Influencers (Jangkauan Harian & Review Jujur).</li>
+              <li><b class="text-white">30%:</b> 1 Key Opinion Leader (Membangun Kredibilitas).</li>
+              <li><b class="text-white">10%:</b> Paid Boost / Ads untuk konten yang paling viral.</li>
+            </ul>
           </div>
 
           <div class="p-3 bg-slate-900/60 border border-white/10 rounded-lg">
-            <p class="font-semibold text-slate-200 mb-1">Channel Efficiency Deployment:</p>
-            
-            <div class="mt-3">
-              <div class="flex items-center justify-between text-slate-300 text-[11px]">
-                <span>TikTok (Organic Reach)</span>
-                <span class="text-emerald-300 font-bold">88/100</span>
+            <p class="font-semibold text-slate-200 mb-2">Efisiensi Kanal (Real-time):</p>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-[11px] text-slate-300">
+                  <span>TikTok (Viralitas & FMCG)</span>
+                  <span class="text-emerald-300 font-bold">88%</span>
+                </div>
+                <div class="w-full bg-slate-950 h-1.5 rounded-full mt-1 overflow-hidden">
+                  <div class="bg-emerald-400 h-1.5 rounded-full" style="width: 88%"></div>
+                </div>
               </div>
-              <div class="w-full bg-slate-950 h-1.5 rounded-full mt-1 overflow-hidden">
-                <div class="bg-emerald-400 h-1.5 rounded-full" style="width: 88%"></div>
-              </div>
-            </div>
-
-            <div class="mt-3">
-              <div class="flex items-center justify-between text-slate-300 text-[11px]">
-                <span>Instagram Reels</span>
-                <span class="text-purple-300 font-bold">72/100</span>
-              </div>
-              <div class="w-full bg-slate-950 h-1.5 rounded-full mt-1 overflow-hidden">
-                <div class="bg-purple-400 h-1.5 rounded-full" style="width: 72%"></div>
+              <div>
+                <div class="flex justify-between text-[11px] text-slate-300">
+                  <span>Instagram Reels (Visual Aesthetic)</span>
+                  <span class="text-purple-300 font-bold">82%</span>
+                </div>
+                <div class="w-full bg-slate-950 h-1.5 rounded-full mt-1 overflow-hidden">
+                  <div class="bg-purple-400 h-1.5 rounded-full" style="width: 82%"></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <button onclick="runAiDecisionCheck()" class="w-full bg-white/10 hover:bg-white/20 text-white py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 border border-white/20 backdrop-blur-sm">
-          <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Regenerate AI Recommendation
+        <button onclick="runAiDecisionCheck()" class="w-full bg-white/10 hover:bg-white/20 text-white py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 border border-white/20">
+          <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Recalculate
         </button>
       </div>
-
     </div>
 
-    <!-- 4. Detailed Influencer Matrix Table -->
+    <!-- 5. Influencer Recommendation Table -->
     <div class="bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden shadow-lg">
       <div class="p-4 border-b border-white/10 flex items-center justify-between">
         <h3 class="text-xs font-bold text-white flex items-center gap-2">
-          <i data-lucide="list-filter" class="w-4 h-4 text-cyan-300"></i> Influencer Network Analysis List
+          <i data-lucide="list-filter" class="w-4 h-4 text-cyan-300"></i> Daftar Influencer Terpilih
         </h3>
-        <span class="text-[11px] text-cyan-100/70">Menampilkan hasil pemetaan jaringan</span>
+        <span class="text-[11px] text-cyan-100/70" id="table-category-tag">Kategori: Obat bahan alam/jamu/herbal</span>
       </div>
 
       <div class="overflow-x-auto">
         <table class="w-full text-left border-collapse text-xs">
           <thead>
             <tr class="bg-slate-950/50 border-b border-white/10 text-cyan-100/80 font-semibold">
-              <th class="p-3 w-12 text-center">No</th>
+              <th class="p-3 text-center w-12">No</th>
               <th class="p-3">Influencer / Akun</th>
-              <th class="p-3">Kanal</th>
-              <th class="p-3">Centrality Score</th>
-              <th class="p-3">Authenticity</th>
-              <th class="p-3">Cluster Minat</th>
-              <th class="p-3 text-center">AI Verdict</th>
+              <th class="p-3">Kanal Utama</th>
+              <th class="p-3">Est. Rate Card</th>
+              <th class="p-3">Keaslian</th>
+              <th class="p-3">Klaster Minat</th>
+              <th class="p-3 text-center">Rekomendasi AI</th>
             </tr>
           </thead>
           <tbody id="sna-table-body" class="divide-y divide-white/5 text-slate-200">
-            <!-- Data di-render lewat JavaScript -->
+            <!-- Render via JS -->
           </tbody>
         </table>
       </div>
@@ -230,96 +293,89 @@
 
   </main>
 
-  <!-- MODAL: ANALISIS INFLUENCER BARU -->
-  <div id="sna-scan-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
-    <div class="bg-slate-900/90 border border-white/20 w-full max-w-lg rounded-2xl flex flex-col shadow-2xl overflow-hidden backdrop-blur-md">
-      
-      <!-- Modal Header -->
-      <div class="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-white/5">
-        <h3 class="text-sm font-bold text-white flex items-center gap-2">
-          <i data-lucide="scan-face" class="w-4 h-4 text-cyan-300"></i> Analisis Jaringan Influencer
-        </h3>
-        <button type="button" onclick="closeScanModal()" class="text-slate-400 hover:text-white transition">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-      </div>
-
-      <!-- Form Input -->
-      <form onsubmit="handleRunSnaScan(event)" class="p-6 space-y-4 text-xs">
-        
-        <!-- Username / Handle -->
-        <div>
-          <label class="block font-semibold text-slate-200 mb-1">Username / Handle Akun <span class="text-rose-400">*</span></label>
-          <input type="text" id="scan-handle" required placeholder="Contoh: @skincare_influencer" class="w-full bg-slate-950/80 border border-white/20 rounded-xl px-3.5 py-2.5 text-slate-100 focus:outline-none focus:border-cyan-400 placeholder-slate-500">
-        </div>
-
-        <!-- Kanal & Cluster -->
-        <div class="grid grid-cols-2 gap-3">
-          <div>
-            <label class="block font-semibold text-slate-200 mb-1">Kanal Social Media <span class="text-rose-400">*</span></label>
-            <select id="scan-channel" required class="w-full bg-slate-950/80 border border-white/20 rounded-xl px-3 py-2.5 text-slate-100 focus:outline-none focus:border-cyan-400">
-              <option value="TikTok">TikTok</option>
-              <option value="Instagram">Instagram</option>
-              <option value="YouTube">YouTube</option>
-              <option value="X">X (Twitter)</option>
-            </select>
-          </div>
-
-          <div>
-            <label class="block font-semibold text-slate-200 mb-1">Cluster / Niche Topik <span class="text-rose-400">*</span></label>
-            <select id="scan-cluster" required class="w-full bg-slate-950/80 border border-white/20 rounded-xl px-3 py-2.5 text-slate-100 focus:outline-none focus:border-cyan-400">
-              <option value="Skincare Tech">Skincare Tech</option>
-              <option value="Beauty Vlogger">Beauty Vlogger</option>
-              <option value="Dermatology">Dermatology</option>
-              <option value="Lifestyle & Fashion">Lifestyle & Fashion</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Estimasi Tipe Influencer -->
-        <div>
-          <label class="block font-semibold text-slate-200 mb-1">Tipe Influencer</label>
-          <select id="scan-type" class="w-full bg-slate-950/80 border border-white/20 rounded-xl px-3 py-2.5 text-slate-100 focus:outline-none focus:border-cyan-400">
-            <option value="connector">Connector Node (Jembatan Komunitas)</option>
-            <option value="hub">Community Hub (Macro / Core)</option>
-            <option value="member">Micro Influencer</option>
-          </select>
-        </div>
-
-        <!-- Actions -->
-        <div class="pt-3 border-t border-white/10 flex justify-end gap-2">
-          <button type="button" onclick="closeScanModal()" class="bg-white/10 text-slate-200 px-4 py-2 rounded-xl font-bold hover:bg-white/20 transition">Batal</button>
-          <button type="submit" id="btn-submit-scan" class="bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-300 hover:to-emerald-300 text-slate-950 px-5 py-2 rounded-xl font-bold transition shadow-lg shadow-cyan-500/20">
-            Mulai Analisis AI
-          </button>
-        </div>
-
-      </form>
-    </div>
-  </div>
-
-  <!-- Script Logika, Visualisasi & Event Handling -->
   <script>
-    // Init Icons
+    // Inisialisasi Icon Lucide
     lucide.createIcons();
 
-    // State Data Dummy Awal
-    let mockInfluencerData = [
-      { id: 1, handle: "@skincare_guru", channel: "TikTok", centrality: "92/100", auth: "96%", cluster: "Skincare Tech", verdict: "HIGHLY RECOMMENDED", type: "connector" },
-      { id: 2, handle: "@beauty_review_id", channel: "Instagram", centrality: "84/100", auth: "91%", cluster: "Beauty Vlogger", verdict: "RECOMMENDED", type: "hub" },
-      { id: 3, handle: "@dr_dermatology", channel: "YouTube", centrality: "88/100", auth: "98%", cluster: "Dermatology", verdict: "HIGHLY RECOMMENDED", type: "connector" },
-      { id: 4, handle: "@glow_daily", channel: "TikTok", centrality: "65/100", auth: "78%", cluster: "Beauty Vlogger", verdict: "MODERATE", type: "member" },
-    ];
+    // Database Influencer Berdasarkan Kategori Produk
+    const categoryData = {
+      "Obat Bahan Alam / Jamu / Herbal": [
+        { id: 1, handle: "@dr_herbal_medismart", channel: "YouTube", rate: "Rp 3.000.000", auth: "98%", cluster: "Pakar Herbal & Medis", verdict: "HIGHLY RECOMMENDED" },
+        { id: 2, handle: "@resep_jamu_sehat", channel: "TikTok", rate: "Rp 2.000.000", auth: "96%", cluster: "Gaya Hidup Herbal", verdict: "HIGHLY RECOMMENDED" },
+        { id: 3, handle: "@fit_herbal_daily", channel: "TikTok", rate: "Rp 2.000.000", auth: "94%", cluster: "Kesehatan Alami", verdict: "RECOMMENDED" },
+        { id: 4, handle: "@hidupsehat_alami", channel: "TikTok", rate: "Rp 2.000.000", auth: "92%", cluster: "Gaya Hidup Herbal", verdict: "RECOMMENDED" },
+        { id: 5, handle: "@dapur_herbal_id", channel: "Instagram", rate: "Rp 1.000.000", auth: "88%", cluster: "Resep Herbal", verdict: "MODERATE" },
+      ],
+      "Suplemen Kesehatan": [
+        { id: 1, handle: "@fit_coach_rio", channel: "Instagram", rate: "Rp 3.500.000", auth: "97%", cluster: "Fitness & Nutrition", verdict: "HIGHLY RECOMMENDED" },
+        { id: 2, handle: "@suplemen_daily", channel: "TikTok", rate: "Rp 2.500.000", auth: "95%", cluster: "Healthy Lifestyle", verdict: "HIGHLY RECOMMENDED" },
+        { id: 3, handle: "@sehat_praktis", channel: "TikTok", rate: "Rp 2.000.000", auth: "93%", cluster: "Tips Kesehatan", verdict: "RECOMMENDED" },
+        { id: 4, handle: "@gym_nutrisi_id", channel: "YouTube", rate: "Rp 2.000.000", auth: "91%", cluster: "Nutrisi Olahraga", verdict: "RECOMMENDED" },
+      ],
+      "Kosmetika": [
+        { id: 1, handle: "@skincare_review_id", channel: "TikTok", rate: "Rp 3.000.000", auth: "98%", cluster: "Beauty & Skincare", verdict: "HIGHLY RECOMMENDED" },
+        { id: 2, handle: "@glowup_with_me", channel: "Instagram", rate: "Rp 2.500.000", auth: "95%", cluster: "Makeup & Beauty", verdict: "HIGHLY RECOMMENDED" },
+        { id: 3, handle: "@racun_beauty_tiktok", channel: "TikTok", rate: "Rp 2.000.000", auth: "92%", cluster: "Beauty Creator", verdict: "RECOMMENDED" },
+        { id: 4, handle: "@derma_aesthetic", channel: "YouTube", rate: "Rp 2.500.000", auth: "96%", cluster: "Dermatology", verdict: "RECOMMENDED" },
+      ],
+      "Apparel Bayi & Anak": [
+        { id: 1, handle: "@mamabebes_journal", channel: "Instagram", rate: "Rp 3.000.000", auth: "96%", cluster: "Parenting & Apparel", verdict: "HIGHLY RECOMMENDED" },
+        { id: 2, handle: "@dunia_si_kecil", channel: "TikTok", rate: "Rp 2.500.000", auth: "94%", cluster: "Mom Lifestyle", verdict: "HIGHLY RECOMMENDED" },
+        { id: 3, handle: "@outfit_anak_gemes", channel: "TikTok", rate: "Rp 2.000.000", auth: "91%", cluster: "Kids Fashion", verdict: "RECOMMENDED" },
+        { id: 4, handle: "@curhatan_mama_muda", channel: "Instagram", rate: "Rp 2.500.000", auth: "93%", cluster: "Parenting", verdict: "RECOMMENDED" },
+      ],
+      "T-shirt / Daily Apparel": [
+        { id: 1, handle: "@streetwear_indo", channel: "TikTok", rate: "Rp 3.000.000", auth: "97%", cluster: "Streetwear", verdict: "HIGHLY RECOMMENDED" },
+        { id: 2, handle: "@ootd_daily_men", channel: "Instagram", rate: "Rp 2.500.000", auth: "95%", cluster: "Casual Fashion", verdict: "HIGHLY RECOMMENDED" },
+        { id: 3, handle: "@kaos_lokal_hype", channel: "TikTok", rate: "Rp 2.500.000", auth: "92%", cluster: "Local Brand", verdict: "RECOMMENDED" },
+        { id: 4, handle: "@style_simple_id", channel: "Instagram", rate: "Rp 2.000.000", auth: "90%", cluster: "Daily Outfit", verdict: "RECOMMENDED" },
+      ],
+      "Batik": [
+        { id: 1, handle: "@pesona_batik_modern", channel: "Instagram", rate: "Rp 3.500.000", auth: "98%", cluster: "Modern Fashion", verdict: "HIGHLY RECOMMENDED" },
+        { id: 2, handle: "@batik_ootd_kantor", channel: "TikTok", rate: "Rp 2.500.000", auth: "94%", cluster: "Formal & Daily", verdict: "HIGHLY RECOMMENDED" },
+        { id: 3, handle: "@warisan_budaya_style", channel: "Instagram", rate: "Rp 2.000.000", auth: "92%", cluster: "Heritage Fashion", verdict: "RECOMMENDED" },
+        { id: 4, handle: "@inspirasi_batik_pria", channel: "TikTok", rate: "Rp 2.000.000", auth: "90%", cluster: "Men's Fashion", verdict: "RECOMMENDED" },
+      ]
+    };
 
-    // 1. Render Tabel Data
-    function renderSnaTable(data) {
+    // Database TrendWave Berdasarkan Kategori dengan Persentase Lonjakan
+    const trendWaveData = {
+      "Obat Bahan Alam / Jamu / Herbal": {
+        keywords: [ { word: "Jamu Viral", growth: "+520%" }, { word: "Detox Rempah", growth: "+310%" }, { word: "Back to Nature", growth: "+140%" }, { word: "Empon-Empon", growth: "+95%" } ],
+        score: 88, status: "RISING TREND",
+        idea: "Audiens sedang ramai mencari resep jamu detox di TikTok. <b>Ide:</b> Kolaborasi dengan kreator untuk buat video 'A day in my life: Rahasia kulit bersih pakai herbal detox dari brand kamu'."
+      },
+      "Suplemen Kesehatan": {
+        keywords: [ { word: "Gym Pemula", growth: "+450%" }, { word: "Creatine Murah", growth: "+280%" }, { word: "Defisit Kalori", growth: "+160%" }, { word: "Fat Burner", growth: "+110%" } ],
+        score: 91, status: "PEAKING TREND",
+        idea: "Banyak komentar dari pemula gym yang kebingungan suplemen. <b>Ide:</b> Buat Carousel Instagram edukasi 'Starter Pack Suplemen' dan endorse *fit-coach* untuk memecah mitos suplemen."
+      },
+      "Kosmetika": {
+        keywords: [ { word: "Makeup Douyin", growth: "+580%" }, { word: "Cegir", growth: "+420%" }, { word: "Glass Skin", growth: "+210%" }, { word: "Sunscreen Stick", growth: "+130%" } ],
+        score: 95, status: "VIRAL WAVE",
+        idea: "Tren transisi 'Cegir (Cewek Pinggir)' ke gaya 'Douyin Makeup' sedang FYP! <b>Ide:</b> Tantang influencer kosmetik melakukan transisi ini menggunakan produk lip/eye makeup brand kamu dengan *sound* viral tersebut."
+      },
+      "Apparel Bayi & Anak": {
+        keywords: [ { word: "Baju Anti Gerah", growth: "+390%" }, { word: "OOTD Bayi Lucu", growth: "+270%" }, { word: "Mom Hacks", growth: "+180%" }, { word: "Setelan Katun", growth: "+105%" } ],
+        score: 79, status: "RISING TREND",
+        idea: "Keluhan cuaca panas sedang tinggi di kalangan ibu. <b>Ide:</b> Minta influencer ibu muda untuk buat video komedi POV 'Drama anak rewel karena gerah' yang diselesaikan dengan mengganti pakaian ke produk apparel kamu."
+      },
+      "T-shirt / Daily Apparel": {
+        keywords: [ { word: "Oversized Fit", growth: "+480%" }, { word: "Outfit Skena", growth: "+310%" }, { word: "Heavyweight Cotton", growth: "+190%" }, { word: "Thrifting", growth: "+120%" } ],
+        score: 85, status: "RISING TREND",
+        idea: "Keyword 'Outfit Skena' dan kaos pola *oversized* kembali naik pesat. <b>Ide:</b> Kirim PR Package ke kreator *streetwear* untuk membuat konten 'Styling 1 Kaos Oversized jadi 3 Looks Ala Skena'."
+      },
+      "Batik": {
+        keywords: [ { word: "Kondangan Style", growth: "+340%" }, { word: "Batik Kantor", growth: "+210%" }, { word: "Modern Ethnic", growth: "+130%" }, { word: "Outer Batik", growth: "+85%" } ],
+        score: 72, status: "STEADY / EVERGREEN",
+        idea: "Musim pernikahan mulai ramai ('Kondangan Style'). <b>Ide:</b> Buat video transisi *couple* menggunakan koleksi sarimbit/batik kantoran modern yang elegan."
+      }
+    };
+
+    // Render Tabel
+    function renderTable(data) {
       const tbody = document.getElementById('sna-table-body');
       if (!tbody) return;
-
-      if (data.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="7" class="p-4 text-center text-cyan-100/60">Tidak ada data influencer ditemukan.</td></tr>`;
-        return;
-      }
 
       tbody.innerHTML = data.map((item, index) => {
         const badgeColor = item.verdict.includes('HIGHLY') 
@@ -333,8 +389,8 @@
             <td class="p-3 text-center font-semibold text-cyan-100/50">${index + 1}</td>
             <td class="p-3 font-bold text-white">${item.handle}</td>
             <td class="p-3 text-slate-200">${item.channel}</td>
-            <td class="p-3 font-semibold text-cyan-300">${item.centrality}</td>
-            <td class="p-3 text-emerald-300 font-semibold">${item.auth}</td>
+            <td class="p-3 font-semibold text-emerald-300">${item.rate}</td>
+            <td class="p-3 text-cyan-300 font-semibold">${item.auth}</td>
             <td class="p-3 text-slate-200">${item.cluster}</td>
             <td class="p-3 text-center">
               <span class="px-2.5 py-1 rounded-full text-[10px] font-bold border ${badgeColor}">
@@ -346,105 +402,116 @@
       }).join('');
     }
 
-    // 2. Render Interactive Network Graph via Vis.js
-    function initNetworkGraph() {
+    // Dynamic Word Cloud Generator untuk Rising Keywords
+    function updateTrendWave(categoryName) {
+      const trend = trendWaveData[categoryName] || trendWaveData["Obat Bahan Alam / Jamu / Herbal"];
+      const container = document.getElementById('trend-keywords-container');
+
+      container.innerHTML = trend.keywords.map(kw => {
+        const growthValue = parseInt(kw.growth.replace('+', '').replace('%', ''));
+        
+        // Penyesuaian visualisasi berdasarkan persentase lonjakan (Word Cloud Style)
+        let styleClass = "";
+        if (growthValue >= 450) {
+          styleClass = "text-sm px-3.5 py-1.5 bg-gradient-to-r from-rose-500/25 via-cyan-500/25 to-emerald-500/25 border-cyan-400/60 text-white font-extrabold shadow-lg shadow-cyan-500/20 ring-1 ring-cyan-400/40 animate-pulse";
+        } else if (growthValue >= 250) {
+          styleClass = "text-xs px-3 py-1 bg-cyan-950/80 border-cyan-400/40 text-cyan-200 font-bold shadow-md shadow-cyan-500/10";
+        } else if (growthValue >= 150) {
+          styleClass = "text-[11px] px-2.5 py-1 bg-slate-900/90 border-slate-700 text-slate-200 font-semibold";
+        } else {
+          styleClass = "text-[10px] px-2 py-0.5 bg-slate-950/60 border-slate-800 text-slate-400 font-medium opacity-80";
+        }
+
+        return `
+          <span class="rounded-xl border transition-all hover:scale-105 cursor-pointer flex items-center gap-1.5 ${styleClass}">
+            ${kw.word} 
+            <span class="${growthValue >= 300 ? 'text-emerald-300 font-black' : 'text-emerald-400 font-bold'}">${kw.growth}</span> 
+            <i data-lucide="trending-up" class="w-3 h-3 text-emerald-400"></i>
+          </span>
+        `;
+      }).join('');
+      
+      // Update Score & Status
+      document.getElementById('trend-score').innerText = trend.score;
+      document.getElementById('trend-status').innerText = trend.status;
+      
+      // Update AI Idea
+      document.getElementById('trend-ai-idea').innerHTML = trend.idea;
+
+      lucide.createIcons();
+    }
+
+    // Render Vis.js Graph Map
+    let networkGraph = null;
+    function initNetworkGraph(categoryName) {
       const container = document.getElementById('sna-graph-canvas');
       if (!container) return;
 
-      const nodes = new vis.DataSet([
-        { id: 1, label: '@skincare_guru\n(Connector)', color: { background: '#22d3ee', border: '#67e8f9' }, shape: 'ellipse', font: { color: '#0f172a', size: 12, strokeWidth: 0 } },
-        { id: 2, label: '@beauty_review_id', color: { background: '#c084fc', border: '#e879f9' }, shape: 'ellipse', font: { color: '#ffffff', size: 12 } },
-        { id: 3, label: '@dr_dermatology', color: { background: '#22d3ee', border: '#67e8f9' }, shape: 'ellipse', font: { color: '#0f172a', size: 12, strokeWidth: 0 } },
-        { id: 4, label: '@glow_daily', color: { background: '#475569', border: '#64748b' }, shape: 'ellipse', font: { color: '#ffffff', size: 12 } },
-        { id: 5, label: 'Community Skincare', color: { background: '#0f172a', border: '#334155' }, shape: 'box', font: { color: '#38bdf8', size: 11 } }
-      ]);
+      const currentList = categoryData[categoryName] || categoryData["Obat Bahan Alam / Jamu / Herbal"];
 
-      const edges = new vis.DataSet([
-        { from: 1, to: 5, width: 3, color: { color: '#22d3ee' } },
-        { from: 2, to: 5, width: 2, color: { color: '#c084fc' } },
-        { from: 3, to: 1, width: 2, color: { color: '#38bdf8' } },
-        { from: 4, to: 2, width: 1, color: { color: '#64748b' } }
-      ]);
+      const nodesArray = currentList.map((item, idx) => ({
+        id: item.id,
+        label: `${item.handle}\n(${item.cluster})`,
+        color: idx % 2 === 0 ? { background: '#22d3ee', border: '#67e8f9' } : { background: '#c084fc', border: '#e879f9' },
+        shape: 'ellipse',
+        font: { color: idx % 2 === 0 ? '#0f172a' : '#ffffff', size: 10 }
+      }));
+
+      nodesArray.push({
+        id: 99,
+        label: `Komunitas ${categoryName}`,
+        color: { background: '#0f172a', border: '#334155' },
+        shape: 'box',
+        font: { color: '#38bdf8', size: 12 }
+      });
+
+      const edgesArray = currentList.map((item) => ({
+        from: item.id,
+        to: 99,
+        width: 2,
+        color: { color: '#38bdf8' }
+      }));
+
+      const nodes = new vis.DataSet(nodesArray);
+      const edges = new vis.DataSet(edgesArray);
 
       const options = {
         nodes: { borderWidth: 2 },
-        physics: { stabilization: true, barnesHut: { springLength: 100 } }
+        physics: { stabilization: true, barnesHut: { springLength: 120 } }
       };
 
-      new vis.Network(container, { nodes, edges }, options);
+      if (networkGraph) {
+        networkGraph.destroy();
+      }
+      networkGraph = new vis.Network(container, { nodes, edges }, options);
     }
 
-    // 3. Filter Table
-    function filterSnaData() {
-      const channel = document.getElementById('sna-filter-channel').value;
-      const niche = document.getElementById('sna-filter-niche').value;
-      const keyword = document.getElementById('sna-search-keyword').value.toLowerCase();
-
-      const filtered = mockInfluencerData.filter(item => {
-        const matchChannel = !channel || item.channel === channel;
-        const matchNiche = !niche || item.cluster === niche;
-        const matchKeyword = !keyword || item.handle.toLowerCase().includes(keyword);
-        return matchChannel && matchNiche && matchKeyword;
-      });
-
-      renderSnaTable(filtered);
-    }
-
-    // 4. Modal Open & Close Functions
-    function openScanModal() {
-      document.getElementById('sna-scan-modal').classList.remove('hidden');
-    }
-
-    function closeScanModal() {
-      document.getElementById('sna-scan-modal').classList.add('hidden');
-    }
-
-    // 5. Submit Scan Handling
-    async function handleRunSnaScan(e) {
+    // Simulasi Hitung Ulang Budget Form & Kategori
+    function handleBudgetCalculation(e) {
       e.preventDefault();
+      const budget = document.getElementById('input-budget').value;
+      const category = document.getElementById('input-category').value;
+      const formattedBudget = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(budget);
+      
+      document.getElementById('kpi-budget').innerText = formattedBudget;
+      document.getElementById('table-category-tag').innerText = `Kategori: ${category}`;
 
-      const handle = document.getElementById('scan-handle').value.trim();
-      const channel = document.getElementById('scan-channel').value;
-      const cluster = document.getElementById('scan-cluster').value;
-      const type = document.getElementById('scan-type').value;
-
-      const btn = document.getElementById('btn-submit-scan');
-      btn.disabled = true;
-      btn.innerText = 'Menganalisis Jaringan...';
-
-      setTimeout(() => {
-        const newItem = {
-          id: Date.now(),
-          handle: handle.startsWith('@') ? handle : `@${handle}`,
-          channel,
-          centrality: `${Math.floor(Math.random() * 15) + 85}/100`,
-          auth: `${Math.floor(Math.random() * 8) + 92}%`,
-          cluster,
-          verdict: 'HIGHLY RECOMMENDED',
-          type
-        };
-
-        mockInfluencerData.unshift(newItem);
-        renderSnaTable(mockInfluencerData);
-
-        document.getElementById('kpi-total-influencers').innerText = mockInfluencerData.length;
-
-        e.target.reset();
-        closeScanModal();
-
-        btn.disabled = false;
-        btn.innerText = 'Mulai Analisis AI';
-      }, 1000);
+      const selectedData = categoryData[category] || categoryData["Obat Bahan Alam / Jamu / Herbal"];
+      renderTable(selectedData);
+      initNetworkGraph(category);
+      updateTrendWave(category);
     }
 
     function runAiDecisionCheck() {
-      alert('Memperbarui analisis matriks keputusan AI...');
+      alert('Sistem AI memperbarui analisis interaksi audiens & metrik kanal...');
     }
 
-    // Init Page Load
+    // Inisialisasi awal saat halaman dimuat
     window.addEventListener('DOMContentLoaded', () => {
-      renderSnaTable(mockInfluencerData);
-      initNetworkGraph();
+      const initialCategory = "Obat Bahan Alam / Jamu / Herbal";
+      renderTable(categoryData[initialCategory]);
+      initNetworkGraph(initialCategory);
+      updateTrendWave(initialCategory);
     });
   </script>
 </body>
